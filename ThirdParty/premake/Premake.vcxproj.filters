@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="..">
+      <UniqueIdentifier>{61705900-4DFC-870B-B6AA-880BA255880B}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="..\BuildMachineTest">
+      <UniqueIdentifier>{1572F3AC-81D3-D0BA-0A41-176D76A1077A}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="..\Renderer">
+      <UniqueIdentifier>{27B18312-9366-FC07-1C5B-F6DE880FF30B}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="..\Sandbox">
+      <UniqueIdentifier>{3F7B6B1D-2B33-AD6A-943A-86C68011485B}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="..\Tutorial">
+      <UniqueIdentifier>{642278C9-D0D7-F0BE-59CC-EA95C580E7C2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="..\Tutorial\DX12">
+      <UniqueIdentifier>{32879AB0-1E80-B902-47B2-9E87330A990E}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="..\Tutorial\DX12\DX12Tutorial1">
+      <UniqueIdentifier>{2521F47E-1147-BEE5-FA8C-43B1E651E3B1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="..\Tutorial\DX12\DX12Tutorial2">
+      <UniqueIdentifier>{2621F47E-1247-BEE5-FB8C-43B1E751E3B1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="..\Tutorial\DX12\DX12Tutorial3">
+      <UniqueIdentifier>{2721F47E-1347-BEE5-FC8C-43B1E851E3B1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="..\Tutorial\DX12\DX12Tutorial4">
+      <UniqueIdentifier>{2821F47E-1447-BEE5-FD8C-43B1E951E3B1}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\BuildMachineTest\premake5.lua">
+      <Filter>..\BuildMachineTest</Filter>
+    </None>
+    <None Include="..\..\Renderer\premake5.lua">
+      <Filter>..\Renderer</Filter>
+    </None>
+    <None Include="..\..\Sandbox\premake5.lua">
+      <Filter>..\Sandbox</Filter>
+    </None>
+    <None Include="..\..\Tutorial\DX12\DX12Tutorial1\premake5.lua">
+      <Filter>..\Tutorial\DX12\DX12Tutorial1</Filter>
+    </None>
+    <None Include="..\..\Tutorial\DX12\DX12Tutorial2\premake5.lua">
+      <Filter>..\Tutorial\DX12\DX12Tutorial2</Filter>
+    </None>
+    <None Include="..\..\Tutorial\DX12\DX12Tutorial3\premake5.lua">
+      <Filter>..\Tutorial\DX12\DX12Tutorial3</Filter>
+    </None>
+    <None Include="..\..\Tutorial\DX12\DX12Tutorial4\premake5.lua">
+      <Filter>..\Tutorial\DX12\DX12Tutorial4</Filter>
+    </None>
+    <None Include="..\..\premake5.lua">
+      <Filter>..</Filter>
+    </None>
+    <None Include="premake5.lua" />
+  </ItemGroup>
+</Project>
