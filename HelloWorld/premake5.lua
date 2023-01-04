@@ -1,7 +1,7 @@
 project "HelloWorld"
 	kind "ConsoleApp"
 	language "C++"
-	cppdialect "C++17"
+	cppdialect "C++14"
 	staticruntime "on"
 
 	targetdir ("%{wks.location}/Binaries/" .. outputdir .. "/%{prj.name}")
@@ -29,7 +29,6 @@ project "HelloWorld"
 	links { "bgfx", "bimg", "bx", "glfw" }
 
 	filter "system:windows"
-		systemversion "latest"
 		links { "gdi32", "kernel32", "psapi" }
 	
 	filter "system:linux"
@@ -38,3 +37,5 @@ project "HelloWorld"
 	filter "system:macosx"
 		links { "QuartzCore.framework", "Metal.framework", "Cocoa.framework", "IOKit.framework", "CoreVideo.framework" }
 	setBxCompat()
+	
+	

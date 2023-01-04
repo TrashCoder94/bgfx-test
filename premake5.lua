@@ -3,6 +3,7 @@ include "./ThirdParty/premake/premake_customization/solution_items.lua"
 -- Visual Studio Solution
 workspace "BGFXTest"
 	architecture "x86_64"
+	startproject "HelloWorld"
 	
 	configurations
 	{
@@ -54,7 +55,6 @@ workspace "BGFXTest"
 			"FD_DISTRIBUTION",
 			"BX_CONFIG_DEBUG=0"
 		}
-		defines "FD_DISTRIBUTION"
 		runtime "Release"
 		optimize "on"
 		
@@ -62,6 +62,9 @@ workspace "BGFXTest"
 		architecture "x86"
 	filter "platforms:x86_64"
 		architecture "x86_64"
+	filter "system:windows"
+		toolset "v143"
+		buildoptions { "/Zc:__cplusplus" }
 	filter "system:macosx"
 		xcodebuildsettings {
 			["MACOSX_DEPLOYMENT_TARGET"] = "10.9",
@@ -74,8 +77,13 @@ outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 -- Include directories
 IncludeDir = {}
 IncludeDir["bgfx"] = "%{wks.location}/bgfx-test/ThirdParty/bgfx/include"
+IncludeDir["bgfx3rdParty"] = "%{wks.location}/bgfx-test/ThirdParty/bgfx/3rdparty"
+IncludeDir["bgfx3rdPartydxsdk"] = "%{wks.location}/bgfx-test/ThirdParty/bgfx/3rdparty/directx-headers/include/directx"
+IncludeDir["bgfx3rdPartyKhronos"] = "%{wks.location}/bgfx-test/ThirdParty/bgfx/3rdparty/khronos"
 IncludeDir["bimg"] = "%{wks.location}/bgfx-test/ThirdParty/bimg/include"
+IncludeDir["bimg3rdPartyAstcEncoder"] = "%{wks.location}/bgfx-test/ThirdParty/bimg/3rdparty/astc-encoder/include"
 IncludeDir["bx"] = "%{wks.location}/bgfx-test/ThirdParty/bx/include"
+IncludeDir["bx3rdParty"] = "%{wks.location}/bgfx-test/ThirdParty/bx/3rdparty"
 IncludeDir["bxCompatMSVC"] = "%{wks.location}/bgfx-test/ThirdParty/bx/include/compat/msvc"
 IncludeDir["bxCompatMingW"] = "%{wks.location}/bgfx-test/ThirdParty/bx/include/compat/mingw"
 IncludeDir["bxCompatOSX"] = "%{wks.location}/bgfx-test/ThirdParty/bx/include/compat/osx"
@@ -94,6 +102,10 @@ end
 -- Other premakes to use
 group "Dependencies"
 	include "ThirdParty/premake"
+	include "bgfx"
+	include "bimg"
+	include "bx"
+	include "glfw"
 group ""
 
 group "Example"

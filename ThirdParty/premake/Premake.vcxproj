@@ -141,6 +141,10 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <None Include="..\..\HelloWorld\premake5.lua" />
+    <None Include="..\..\bgfx\premake5.lua" />
+    <None Include="..\..\bimg\premake5.lua" />
+    <None Include="..\..\bx\premake5.lua" />
+    <None Include="..\..\glfw\premake5.lua" />
     <None Include="..\..\premake5.lua" />
     <None Include="premake5.lua" />
   </ItemGroup>

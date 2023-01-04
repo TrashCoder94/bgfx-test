@@ -7,10 +7,34 @@
     <Filter Include="..\HelloWorld">
       <UniqueIdentifier>{ACB2893E-1873-0575-E1AD-4EF24D2D4A51}</UniqueIdentifier>
     </Filter>
+    <Filter Include="..\bgfx">
+      <UniqueIdentifier>{97D58D47-03B5-0CE3-0CCD-97B9782B7344}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="..\bimg">
+      <UniqueIdentifier>{EFDE8D47-5BBE-0CE3-64D6-97B9D0347344}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="..\bx">
+      <UniqueIdentifier>{CA75590B-368A-81BC-FF0B-251C6BDF7DED}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="..\glfw">
+      <UniqueIdentifier>{C0A89047-2C88-0FE3-35A0-9AB9A1FE7544}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <None Include="..\..\HelloWorld\premake5.lua">
       <Filter>..\HelloWorld</Filter>
+    </None>
+    <None Include="..\..\bgfx\premake5.lua">
+      <Filter>..\bgfx</Filter>
+    </None>
+    <None Include="..\..\bimg\premake5.lua">
+      <Filter>..\bimg</Filter>
+    </None>
+    <None Include="..\..\bx\premake5.lua">
+      <Filter>..\bx</Filter>
+    </None>
+    <None Include="..\..\glfw\premake5.lua">
+      <Filter>..\glfw</Filter>
     </None>
     <None Include="..\..\premake5.lua">
       <Filter>..</Filter>
