@@ -2,6 +2,9 @@
  * Copyright 2011-2019 Branimir Karadzic. All rights reserved.
  * License: https://github.com/bkaradzic/bgfx#license-bsd-2-clause
  */
+
+#include <chrono>
+#include <iostream>
 #include <stdio.h>
 #include <bx/bx.h>
 #include <bgfx/bgfx.h>
@@ -32,6 +35,11 @@ static void glfw_keyCallback(GLFWwindow* window, int key, int scancode, int acti
 
 int main(int argc, char** argv)
 {
+	static std::chrono::high_resolution_clock clock;
+	static auto previousTime = clock.now();
+	static float elapsedSeconds = 0.0f;
+	static float autoQuitTime = 10.0f;
+
 	// Create a GLFW window without an OpenGL context.
 	glfwSetErrorCallback(glfw_errorCallback);
 	if (!glfwInit())
@@ -66,6 +74,19 @@ int main(int argc, char** argv)
 	bgfx::setViewClear(kClearView, BGFX_CLEAR_COLOR);
 	bgfx::setViewRect(kClearView, 0, 0, bgfx::BackbufferRatio::Equal);
 	while (!glfwWindowShouldClose(window)) {
+		auto currentTime = clock.now();
+		auto deltaTime = currentTime - previousTime;
+		previousTime = currentTime;
+		auto currentDeltaTime = deltaTime.count() * 1e-9f;
+
+		elapsedSeconds += currentDeltaTime;
+
+		if (elapsedSeconds >= autoQuitTime)
+		{
+			std::cout << autoQuitTime << "s have passed, so shutting down this application!" << std::endl;
+			break;
+		}
+
 		glfwPollEvents();
 		// Handle window resize.
 		int oldWidth = width, oldHeight = height;
