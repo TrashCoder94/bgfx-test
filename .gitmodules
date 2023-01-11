@@ -1,12 +1,3 @@
-[submodule "bgfx-test/ThirdParty/bgfx"]
-	path = bgfx-test/ThirdParty/bgfx
-	url = https://github.com/bkaradzic/bgfx.git
-[submodule "bgfx-test/ThirdParty/bimg"]
-	path = bgfx-test/ThirdParty/bimg
-	url = https://github.com/bkaradzic/bimg.git
-[submodule "bgfx-test/ThirdParty/bx"]
-	path = bgfx-test/ThirdParty/bx
-	url = https://github.com/bkaradzic/bx.git
 [submodule "bgfx-test/ThirdParty/glfw"]
 	path = bgfx-test/ThirdParty/glfw
 	url = https://github.com/glfw/glfw.git
