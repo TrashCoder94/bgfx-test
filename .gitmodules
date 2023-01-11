@@ -10,9 +10,6 @@
 [submodule "bgfx-test/ThirdParty/glfw"]
 	path = bgfx-test/ThirdParty/glfw
 	url = https://github.com/glfw/glfw.git
-[submodule "Scripts/ThirdParty/CI-GithubActions-HelloWorld"]
-	path = Scripts/ThirdParty/CI-GithubActions-HelloWorld
-	url = https://github.com/TrashCoder94/CI-GithubActions-HelloWorld.git
 [submodule "ThirdParty/CI-GithubActions-HelloWorld"]
 	path = ThirdParty/CI-GithubActions-HelloWorld
 	url = https://github.com/TrashCoder94/CI-GithubActions-HelloWorld.git
