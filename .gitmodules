@@ -1,3 +1,0 @@
-[submodule "bgfx-test/ThirdParty/glfw"]
-	path = bgfx-test/ThirdParty/glfw
-	url = https://github.com/glfw/glfw.git
