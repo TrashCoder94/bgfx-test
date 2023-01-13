@@ -1,8 +1,10 @@
 #!/bin/sh
 
+sudo apt-get update
+#sudo apt-get install x11-xserver-utils
 sudo apt install libgl-dev
-sudo apt install libxcursor-dev
-sudo apt install libx11-dev
+#sudo apt install libxcursor-dev
+#sudo apt install libx11-dev
 
 echo "Generating Project with Premake!"
 chmod +x ThirdParty/premake/Binaries/premake5
