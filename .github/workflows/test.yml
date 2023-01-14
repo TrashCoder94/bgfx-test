@@ -69,7 +69,7 @@ jobs:
         working-directory: ${{env.GITHUB_WORKSPACE}}
         run: |
           echo $DISPLAY
-          export DISPLAY=:0
+          export DISPLAY=unix:0.0
           echo $DISPLAY
         
       - name: Test
