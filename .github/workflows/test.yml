@@ -65,13 +65,13 @@ jobs:
       - name: Display structure of downloaded files
         run: ls -R
         
-      - name: Setup Prerequisites
-        working-directory: ${{env.GITHUB_WORKSPACE}}
-        run: |
-          echo $DISPLAY
-          export DISPLAY=:99
-          export LIBGL_ALWAYS_SOFTWARE=1
-          echo $DISPLAY
+      #- name: Setup Prerequisites
+      #  working-directory: ${{env.GITHUB_WORKSPACE}}
+      #  run: |
+      #    echo $DISPLAY
+      #    export DISPLAY=:99
+      #    export LIBGL_ALWAYS_SOFTWARE=1
+      #    echo $DISPLAY
         
       - name: Test
         working-directory: ${{env.GITHUB_WORKSPACE}}
