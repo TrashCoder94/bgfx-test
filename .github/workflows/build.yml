@@ -61,9 +61,6 @@ jobs:
           sudo apt-get update
           sudo apt install libgl-dev
           sudo apt install xorg-dev
-          echo $DISPLAY
-          $DISPLAY=1
-          echo $DISPLAY
           
       - name: Build
         working-directory: ${{env.GITHUB_WORKSPACE}}
