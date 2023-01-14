@@ -40,13 +40,6 @@ jobs:
       - name: Display structure of downloaded files
         run: ls -R
 
-      - name: Setup Prerequisites
-        working-directory: ${{env.GITHUB_WORKSPACE}}
-        run: |
-          echo $DISPLAY
-          export DISPLAY=1
-          echo $DISPLAY
-
       - name: Test
         working-directory: ${{env.GITHUB_WORKSPACE}}
         run: Scripts/BuildMachine/BuildMachine-Windows-Run.bat
@@ -73,7 +66,11 @@ jobs:
         run: ls -R
         
       - name: Setup Prerequisites
-        
+        working-directory: ${{env.GITHUB_WORKSPACE}}
+        run: |
+          echo $DISPLAY
+          export DISPLAY=1
+          echo $DISPLAY
         
       - name: Test
         working-directory: ${{env.GITHUB_WORKSPACE}}
