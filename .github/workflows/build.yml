@@ -61,8 +61,6 @@ jobs:
           sudo apt-get update
           sudo apt install libgl-dev
           sudo apt install xorg-dev
-          export DISPLAY=:99.0
-          export LIBGL_ALWAYS_SOFTWARE=1
           
       - name: Build
         working-directory: ${{env.GITHUB_WORKSPACE}}
