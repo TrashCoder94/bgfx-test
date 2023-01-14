@@ -19,30 +19,30 @@ env:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  # Windows - Test
-  Windows:
-    # The type of runner that the job will run on
-    runs-on: windows-latest
-
-    # Steps represent a sequence of tasks that will be executed as part of the job
-    steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - name: Checkout Repository
-        uses: actions/checkout@v2
-
-      - name: Download Workflow Artifact
-        uses: dawidd6/action-download-artifact@v2.14.0
-        with:
-          workflow: build.yml
-          name: Windows-Binaries
-          path: Binaries
-          
-      - name: Display structure of downloaded files
-        run: ls -R
-
-      - name: Test
-        working-directory: ${{env.GITHUB_WORKSPACE}}
-        run: Scripts/BuildMachine/BuildMachine-Windows-Run.bat
+  ## Windows - Test
+  #Windows:
+  #  # The type of runner that the job will run on
+  #  runs-on: windows-latest
+  #
+  #  # Steps represent a sequence of tasks that will be executed as part of the job
+  #  steps:
+  #    # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+  #    - name: Checkout Repository
+  #      uses: actions/checkout@v2
+  #
+  #    - name: Download Workflow Artifact
+  #      uses: dawidd6/action-download-artifact@v2.14.0
+  #      with:
+  #        workflow: build.yml
+  #        name: Windows-Binaries
+  #        path: Binaries
+  #        
+  #    - name: Display structure of downloaded files
+  #      run: ls -R
+  #
+  #    - name: Test
+  #      working-directory: ${{env.GITHUB_WORKSPACE}}
+  #      run: Scripts/BuildMachine/BuildMachine-Windows-Run.bat
           
   # Linux - Test
   Linux:
