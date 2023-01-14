@@ -5,7 +5,7 @@
 
 ## Prerequisites
 
-###Linux
+### Linux
 ```
 sudo apt-get update
 sudo apt install libgl-dev
