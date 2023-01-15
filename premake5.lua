@@ -12,10 +12,14 @@ workspace "BGFXTest"
 		"Distribution"
 	}
 
-	if os.is64bit() then
+	if os.is64bit() and not os.host() == "windows" then
 		platforms "x86_64"
 	else
 		platforms { "x86", "x86_64" }
+	end
+
+	if not os.host() == "macosx" then
+		solution_items { ".editorconfig" }
 	end
 
 	flags
@@ -60,7 +64,6 @@ workspace "BGFXTest"
 	filter "system:windows"
 		toolset "v143"
 		buildoptions { "/Zc:__cplusplus" }
-		solution_items { ".editorconfig" }
 	filter "system:macosx"
 		xcodebuildsettings {
 			["MACOSX_DEPLOYMENT_TARGET"] = "10.9",
