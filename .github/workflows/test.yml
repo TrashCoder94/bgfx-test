@@ -68,14 +68,15 @@ jobs:
       - name: Setup Prerequisites
         working-directory: ${{env.GITHUB_WORKSPACE}}
         run: |
-          export DISPLAY=:0
-          glxinfo | grep OpenGL
+          export DISPLAY=:99
+          sudo apt-get update
+          sudo apt install xvfb
           
       - name: Test
         working-directory: ${{env.GITHUB_WORKSPACE}}
         run: |
           chmod +x Scripts/BuildMachine/BuildMachine-Linux-Run.sh
-          Scripts/BuildMachine/BuildMachine-Linux-Run.sh
+          xvfb-run -a Scripts/BuildMachine/BuildMachine-Linux-Run.sh
 #        
 #  # Mac - Test
 #  Mac:
