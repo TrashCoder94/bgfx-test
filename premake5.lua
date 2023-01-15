@@ -18,11 +18,6 @@ workspace "BGFXTest"
 		platforms { "x86", "x86_64" }
 	end
 
-	solution_items
-	{
-		".editorconfig"
-	}
-
 	flags
 	{
 		"MultiProcessorCompile"
@@ -65,6 +60,7 @@ workspace "BGFXTest"
 	filter "system:windows"
 		toolset "v143"
 		buildoptions { "/Zc:__cplusplus" }
+		solution_items { ".editorconfig" }
 	filter "system:macosx"
 		xcodebuildsettings {
 			["MACOSX_DEPLOYMENT_TARGET"] = "10.9",
