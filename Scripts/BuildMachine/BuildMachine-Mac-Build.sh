@@ -2,7 +2,7 @@
 
 echo "Generating Project with Premake!"
 chmod +x ThirdParty/premake/Binaries/premake5_mac
-ThirdParty/premake/Binaries/premake5_mac --file=premake5.lua gmake
+ThirdParty/premake/Binaries/premake5_mac --file=premake5.lua gmake2
 
 make config=debug_x86_64
 if [ $? -ne 0 ] 
