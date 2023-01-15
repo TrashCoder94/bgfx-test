@@ -15,86 +15,86 @@ env:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  # Windows - Build
-  #Windows:
-  #  # The type of runner that the job will run on
-  #  runs-on: windows-latest
-  #  
-  #  # Steps represent a sequence of tasks that will be executed as part of the job
-  #  steps:
-  #    # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-  #    - name: Checkout Repository
-  #      uses: actions/checkout@v2
-  #      with:
-  #          submodules: recursive
-  #
-  #    - name: Setup VS Dev Environment
-  #      uses: seanmiddleditch/gha-setup-vsdevenv@v4
-  #
-  #    - name: Build
-  #      working-directory: ${{env.GITHUB_WORKSPACE}}
-  #      run: Scripts/BuildMachine/BuildMachine-Windows-Build.bat
-  #      
-  #    - name: Archive Windows Artifacts
-  #      uses: actions/upload-artifact@v2
-  #      with:
-  #        name: Windows-Binaries
-  #        path: |
-  #          Binaries/**
-          
-  # Linux - Build
-  Linux:
-    # The type of runner that the job will run on
-    runs-on: ubuntu-latest
-
-    # Steps represent a sequence of tasks that will be executed as part of the job
-    steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - name: Checkout Repository
-        uses: actions/checkout@v2
-        with:
-            submodules: recursive
-
-      - name: Setup and Install Prerequisites
-        working-directory: ${{env.GITHUB_WORKSPACE}}
-        run: | 
-          sudo apt-get update
-          sudo apt install libgl-dev
-          sudo apt install xorg-dev
-          
-      - name: Build
-        working-directory: ${{env.GITHUB_WORKSPACE}}
-        run: |
-          chmod +x Scripts/BuildMachine/BuildMachine-Linux-Build.sh
-          Scripts/BuildMachine/BuildMachine-Linux-Build.sh
-        
-      - name: Archive Linux Artifacts
-        uses: actions/upload-artifact@v2
-        with:
-          name: Linux-Binaries
-          path: |
-            Binaries/**
-#       
-#  # Mac - Build
-#  Mac:
+#  # Windows - Build
+#  Windows:
 #    # The type of runner that the job will run on
-#    runs-on: macos-latest
+#    runs-on: windows-latest
+#    
+#    # Steps represent a sequence of tasks that will be executed as part of the job
+#    steps:
+#      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+#      - name: Checkout Repository
+#        uses: actions/checkout@v2
+#        with:
+#            submodules: recursive
+#  
+#      - name: Setup VS Dev Environment
+#        uses: seanmiddleditch/gha-setup-vsdevenv@v4
+#  
+#      - name: Build
+#        working-directory: ${{env.GITHUB_WORKSPACE}}
+#        run: Scripts/BuildMachine/BuildMachine-Windows-Build.bat
+#        
+#      - name: Archive Windows Artifacts
+#        uses: actions/upload-artifact@v2
+#        with:
+#          name: Windows-Binaries
+#          path: |
+#            Binaries/**
+#          
+#  # Linux - Build
+#  Linux:
+#    # The type of runner that the job will run on
+#    runs-on: ubuntu-latest
 #
 #    # Steps represent a sequence of tasks that will be executed as part of the job
 #    steps:
 #      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
 #      - name: Checkout Repository
 #        uses: actions/checkout@v2
-#        
+#        with:
+#            submodules: recursive
+#
+#      - name: Setup and Install Prerequisites
+#        working-directory: ${{env.GITHUB_WORKSPACE}}
+#        run: | 
+#          sudo apt-get update
+#          sudo apt install libgl-dev
+#          sudo apt install xorg-dev
+#          
 #      - name: Build
 #        working-directory: ${{env.GITHUB_WORKSPACE}}
 #        run: |
-#          chmod +x Scripts/Mac-Build.sh
-#          Scripts/Mac-Build.sh
-#
-#      - name: Archive Mac Artifacts
+#          chmod +x Scripts/BuildMachine/BuildMachine-Linux-Build.sh
+#          Scripts/BuildMachine/BuildMachine-Linux-Build.sh
+#        
+#      - name: Archive Linux Artifacts
 #        uses: actions/upload-artifact@v2
 #        with:
-#          name: Mac-Binaries
+#          name: Linux-Binaries
 #          path: |
 #            Binaries/**
+#     
+  # Mac - Build
+  Mac:
+    # The type of runner that the job will run on
+    runs-on: macos-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+        
+      - name: Build
+        working-directory: ${{env.GITHUB_WORKSPACE}}
+        run: |
+          chmod +x Scripts/BuildMachine/BuildMachine-Mac-Build.sh
+          Scripts/BuildMachine/BuildMachine-Mac-Build.sh
+
+      - name: Archive Mac Artifacts
+        uses: actions/upload-artifact@v2
+        with:
+          name: Mac-Binaries
+          path: |
+            Binaries/**
