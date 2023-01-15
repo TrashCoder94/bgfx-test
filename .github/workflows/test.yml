@@ -68,7 +68,9 @@ jobs:
       - name: Setup Prerequisites
         working-directory: ${{env.GITHUB_WORKSPACE}}
         run: |
-          export DISPLAY=:99.0
+          export DISPLAY=:0.0
+          sudo apt-get update
+          sudo apt install xvfb
         
       - name: Test
         working-directory: ${{env.GITHUB_WORKSPACE}}
