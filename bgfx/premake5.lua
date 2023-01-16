@@ -41,4 +41,8 @@ project "bgfx"
 		{
 			"%{wks.location}/ThirdParty/bgfx/src/*.mm"
 		}
+		excludes
+		{
+			"%{wks.location}/ThirdParty/bgfx/src/amalgamated.mm"
+		}
 	setBxCompat()
