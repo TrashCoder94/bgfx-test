@@ -7,7 +7,8 @@ ThirdParty/premake/Binaries/premake5_mac --file=premake5.lua gmake2
 make config=debug_x86_64
 if [ $? -ne 0 ] 
 then
-echo "Building debug configuration failed, exiting out..."
+echo "Building debug configuration failed, listing files and then exiting out..."
+find . -type f
 exit 1
 fi
 
@@ -17,3 +18,5 @@ then
 echo "Building release configuration failed, exiting out..."
 exit 1
 fi
+
+
