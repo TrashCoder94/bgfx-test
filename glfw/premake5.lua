@@ -1,6 +1,6 @@
 project "glfw"
 	kind "StaticLib"
-	-- staticruntime "on"
+	staticruntime "on"
 	language "C"
 	
 	targetdir ("%{wks.location}/Binaries/" .. outputdir .. "/%{prj.name}")
