@@ -2,7 +2,7 @@ project "HelloWorld"
 	kind "ConsoleApp"
 	language "C++"
 	cppdialect "C++14"
-	--staticruntime "on"
+	staticruntime "on"
 
 	targetdir ("%{wks.location}/Binaries/" .. outputdir .. "/%{prj.name}")
 	objdir ("%{wks.location}/Intermediate/" .. outputdir .. "/%{prj.name}")

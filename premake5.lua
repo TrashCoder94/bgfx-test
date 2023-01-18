@@ -65,6 +65,7 @@ workspace "BGFXTest"
 		toolset "v143"
 		buildoptions { "/Zc:__cplusplus" }
 	filter "system:macosx"
+		linkgroups "On"
 		xcodebuildsettings {
 			["MACOSX_DEPLOYMENT_TARGET"] = "10.9",
 			["ALWAYS_SEARCH_USER_PATHS"] = "YES", -- This is the minimum version of macos we'll be able to run on
