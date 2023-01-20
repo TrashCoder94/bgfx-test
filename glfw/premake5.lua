@@ -40,7 +40,6 @@ project "glfw"
 			"%{wks.location}/ThirdParty/glfw/src/xkb*.*"
 		}
 	filter "system:macosx"
-		linkgroups "On"
 		defines "_GLFW_COCOA"
 		files
 		{

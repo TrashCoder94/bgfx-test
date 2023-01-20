@@ -26,7 +26,7 @@ project "HelloWorld"
 		"%{IncludeDir.glfw}"
 	}
 
-	links { "bgfx", "bimg", "bx", "glfw" }
+	links { "glfw", "bx", "bimg", "bgfx" }
 
 	filter "system:windows"
 		links { "gdi32", "kernel32", "psapi" }
