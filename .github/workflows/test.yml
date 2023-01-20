@@ -103,4 +103,4 @@ jobs:
         working-directory: ${{env.GITHUB_WORKSPACE}}
         run: |
           chmod +x Scripts/BuildMachine/BuildMachine-Mac-Run.sh
-          xvfb-run -a Scripts/BuildMachine/BuildMachine-Mac-Run.sh
+          sudo xvfb-run -a Scripts/BuildMachine/BuildMachine-Mac-Run.sh
