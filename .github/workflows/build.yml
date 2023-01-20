@@ -92,7 +92,7 @@ jobs:
         working-directory: ${{env.GITHUB_WORKSPACE}}
         run: |
           export DISPLAY=:99
-          brew cask install xquartz
+          brew install --cask xquartz
           chmod +x Scripts/BuildMachine/BuildMachine-Mac-Debug.sh
           Scripts/BuildMachine/BuildMachine-Mac-Debug.sh
           sudo Xvfb :99 -ac -screen 0 1024x768x8;
