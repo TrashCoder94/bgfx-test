@@ -97,7 +97,8 @@ jobs:
         working-directory: ${{env.GITHUB_WORKSPACE}}
         run: |
           export DISPLAY=:99
-          brew install --cask xvfb
+          brew install --cask xquartz
+          sudo Xvfb :99 -ac -screen 0 1024x768x8;
         
       - name: Test
         working-directory: ${{env.GITHUB_WORKSPACE}}
