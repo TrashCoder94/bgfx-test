@@ -93,11 +93,15 @@ jobs:
           name: Mac-Binaries
           path: Binaries
 
-      - name: Display structure of downloaded files
-        run: ls -R
+      - name: Setup Prerequisites
+        working-directory: ${{env.GITHUB_WORKSPACE}}
+        run: |
+          export DISPLAY=:99
+          sudo apt-get update
+          sudo apt install xvfb
         
       - name: Test
         working-directory: ${{env.GITHUB_WORKSPACE}}
         run: |
           chmod +x Scripts/BuildMachine/BuildMachine-Mac-Run.sh
-          Scripts/BuildMachine/BuildMachine-Mac-Run.sh
+          xvfb-run -a Scripts/BuildMachine/BuildMachine-Mac-Run.sh
