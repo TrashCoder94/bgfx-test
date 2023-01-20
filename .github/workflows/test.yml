@@ -93,15 +93,10 @@ jobs:
           name: Mac-Binaries
           path: Binaries
 
-      - name: Setup Prerequisites
+      - name: Test
+        uses: GabrielBB/xvfb-action@v1.6
         working-directory: ${{env.GITHUB_WORKSPACE}}
         run: |
           export DISPLAY=:99
-          brew install --cask xquartz
-          sudo Xvfb :99 -ac -screen 0 1024x768x8;
-        
-      - name: Test
-        working-directory: ${{env.GITHUB_WORKSPACE}}
-        run: |
           chmod +x Scripts/BuildMachine/BuildMachine-Mac-Run.sh
-          sudo Xvfb -a Scripts/BuildMachine/BuildMachine-Mac-Run.sh
+          Xvfb :99 -screen 0 1024x768x24 -a Scripts/BuildMachine/BuildMachine-Mac-Run.sh

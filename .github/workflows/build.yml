@@ -85,22 +85,8 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - name: Checkout Repository
         uses: actions/checkout@v2
-        #with:
-            #submodules: recursive
-      
-      - name: Setup Prerequisites
-        working-directory: ${{env.GITHUB_WORKSPACE}}
-        run: |
-          export DISPLAY=:99
-          brew install --cask xquartz
-          chmod +x Scripts/BuildMachine/BuildMachine-Mac-Debug.sh
-          Scripts/BuildMachine/BuildMachine-Mac-Debug.sh
-          sudo Xvfb :99 -ac -screen 0 1024x768x8;
-          if [ $? -ne 0 ] 
-          then
-            echo "Done a bad"
-            exit 1
-          fi
+        with:
+            submodules: recursive
       
       - name: Build
         working-directory: ${{env.GITHUB_WORKSPACE}}
