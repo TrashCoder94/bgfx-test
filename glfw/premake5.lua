@@ -53,7 +53,8 @@ project "glfw"
 			"%{wks.location}/ThirdParty/glfw/src/nsgl_context.m",
 			"%{wks.location}/ThirdParty/glfw/src/egl_context.c",
 			"%{wks.location}/ThirdParty/glfw/src/nsgl_context.m",
-			"%{wks.location}/ThirdParty/glfw/src/osmesa_context.c"   
+			"%{wks.location}/ThirdParty/glfw/src/osmesa_context.c",
+			"%{wks.location}/ThirdParty/glfw/src/posix_module.c"		
 		}
 	filter "action:vs*"
 		defines "_CRT_SECURE_NO_WARNINGS"
