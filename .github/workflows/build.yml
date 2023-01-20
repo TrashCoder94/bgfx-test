@@ -88,6 +88,17 @@ jobs:
         with:
             submodules: recursive 
             
+      - name: Setup Prerequisites
+        working-directory: ${{env.GITHUB_WORKSPACE}}
+        run: |
+          export DISPLAY=:99
+          brew install --cask xvfb
+          if [ $? -ne 0 ] 
+          then
+            echo "Done a bad"
+            exit 1
+          fi
+          
       - name: Build
         working-directory: ${{env.GITHUB_WORKSPACE}}
         run: |
