@@ -94,10 +94,17 @@ jobs:
           path: Binaries
 
       - name: Test
-        uses: GabrielBB/xvfb-action@v1.6
-        with:
-           run: |
-              export DISPLAY=:99
-              Xvfb :99 -screen 0 1280x720x24 > /dev/null 2>/tmp/xvfb.err &
-              chmod +x Scripts/BuildMachine/BuildMachine-Mac-Run.sh
-              Scripts/BuildMachine/BuildMachine-Mac-Run.sh
+        working-directory: ${{env.GITHUB_WORKSPACE}}
+        run: |
+          export DISPLAY=:99
+          chmod +x Scripts/BuildMachine/BuildMachine-Mac-Run.sh
+          Scripts/BuildMachine/BuildMachine-Mac-Run.sh
+
+      #- name: Test
+      #  uses: GabrielBB/xvfb-action@v1.6
+      #  with:
+      #     run: |
+      #        export DISPLAY=:99
+      #        Xvfb :99 -screen 0 1280x720x24 > /dev/null 2>/tmp/xvfb.err &
+      #        chmod +x Scripts/BuildMachine/BuildMachine-Mac-Run.sh
+      #        Scripts/BuildMachine/BuildMachine-Mac-Run.sh

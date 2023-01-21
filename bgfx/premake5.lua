@@ -45,4 +45,5 @@ project "bgfx"
 		{
 			"%{wks.location}/ThirdParty/bgfx/src/amalgamated.mm"
 		}
+		buildoptions { "--gl" }
 	setBxCompat()
