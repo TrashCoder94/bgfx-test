@@ -102,7 +102,7 @@ jobs:
       - name: Test
         uses: GabrielBB/xvfb-action@v1.6
         with:
+           options: -screen 0 1600x1200x24
            run: |
-              Xvfb :99 -screen 0 1280x720x24 > /dev/null 2>/tmp/xvfb.err &
               chmod +x Scripts/BuildMachine/BuildMachine-Mac-Run.sh
               Scripts/BuildMachine/BuildMachine-Mac-Run.sh
