@@ -105,4 +105,4 @@ jobs:
            options: -screen 0 1600x1200x24
            run: |
               chmod +x Scripts/BuildMachine/BuildMachine-Mac-Run.sh
-              Scripts/BuildMachine/BuildMachine-Mac-Run.sh
+              xvfb-run -a Scripts/BuildMachine/BuildMachine-Mac-Run.sh
