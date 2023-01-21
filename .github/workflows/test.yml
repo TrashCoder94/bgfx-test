@@ -93,16 +93,21 @@ jobs:
           name: Mac-Binaries
           path: Binaries
 
-      #- name: Test
-      #  working-directory: ${{env.GITHUB_WORKSPACE}}
-      #  run: |
-      #    chmod +x Scripts/BuildMachine/BuildMachine-Mac-Run.sh
-      #    Scripts/BuildMachine/BuildMachine-Mac-Run.sh
+      - name: Install Dependencies
+        run: |
+          brew install --cask xquartz
+          echo "/opt/X11/bin" >> $GITHUB_PATH  
 
       - name: Test
-        uses: GabrielBB/xvfb-action@v1.6
-        with:
-           options: -screen 0 1600x1200x24
-           run: |
-              chmod +x Scripts/BuildMachine/BuildMachine-Mac-Run.sh
-              xvfb-run -a Scripts/BuildMachine/BuildMachine-Mac-Run.sh
+        working-directory: ${{env.GITHUB_WORKSPACE}}
+        run: |
+          chmod +x Scripts/BuildMachine/BuildMachine-Mac-Run.sh
+          xvfb-run -a Scripts/BuildMachine/BuildMachine-Mac-Run.sh
+
+      #- name: Test
+      #  uses: GabrielBB/xvfb-action@v1.6
+      #  with:
+      #     options: -screen 0 1600x1200x24
+      #     run: |
+      #        chmod +x Scripts/BuildMachine/BuildMachine-Mac-Run.sh
+      #        xvfb-run -a Scripts/BuildMachine/BuildMachine-Mac-Run.sh
