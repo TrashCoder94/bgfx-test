@@ -101,8 +101,10 @@ jobs:
       - name: Test
         working-directory: ${{env.GITHUB_WORKSPACE}}
         run: |
+          export DISPLAY=:99
+          sudo Xvfb :99 -ac -screen 0 1024x768x8
           chmod +x Scripts/BuildMachine/BuildMachine-Mac-Run.sh
-          xvfb-run -a Scripts/BuildMachine/BuildMachine-Mac-Run.sh
+          Scripts/BuildMachine/BuildMachine-Mac-Run.sh
 
       #- name: Test
       #  uses: GabrielBB/xvfb-action@v1.6
