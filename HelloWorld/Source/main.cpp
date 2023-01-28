@@ -9,7 +9,14 @@
 #include <bx/bx.h>
 #include <bgfx/bgfx.h>
 #include <bgfx/platform.h>
+
+#include "bgfx-imgui/imgui_impl_bgfx.h"
+#include "imgui.h"
+#include "backends/imgui_impl_glfw.h"
+#include "backends/imgui_impl_opengl3.h"
+
 #include <GLFW/glfw3.h>
+
 #if BX_PLATFORM_LINUX
 #define GLFW_EXPOSE_NATIVE_X11
 #elif BX_PLATFORM_WINDOWS
@@ -73,6 +80,30 @@ int main(int argc, char** argv)
 	const bgfx::ViewId kClearView = 0;
 	bgfx::setViewClear(kClearView, BGFX_CLEAR_COLOR);
 	bgfx::setViewRect(kClearView, 0, 0, bgfx::BackbufferRatio::Equal);
+
+	IMGUI_CHECKVERSION();
+	ImGui::CreateContext();
+	ImGuiIO& io = ImGui::GetIO();
+	io.ConfigFlags |= ImGuiConfigFlags_NavEnableKeyboard;
+	//io.ConfigFlags |= ImGuiConfigFlags_NavEnableGamepad;
+	io.ConfigFlags |= ImGuiConfigFlags_DockingEnable;
+	io.ConfigFlags |= ImGuiConfigFlags_ViewportsEnable;
+
+	ImGui_Implbgfx_Init(255);
+	ImGui_ImplGlfw_InitForOpenGL(window, true);
+
+/*
+Might need this for future reference...
+#if BX_PLATFORM_WINDOWS
+	ImGui_ImplGlfw_InitForOpenGL(window, true);
+#elif BX_PLATFORM_OSX
+	ImGui_ImplGlfw_InitForOpenGL(window, true);
+	//ImGui_ImplGlfw_InitForMetal(window);
+#elif BX_PLATFORM_LINUX
+	ImGui_ImplGlfw_InitForOpenGL(window, true);
+#endif
+*/
+
 	while (!glfwWindowShouldClose(window)) {
 		auto currentTime = clock.now();
 		auto deltaTime = currentTime - previousTime;
@@ -86,8 +117,17 @@ int main(int argc, char** argv)
 			std::cout << autoQuitTime << "s have passed, so shutting down this application!" << std::endl;
 			break;
 		}
-
+		
 		glfwPollEvents();
+
+		ImGui_Implbgfx_NewFrame();
+		ImGui_ImplGlfw_NewFrame();
+
+		ImGui::NewFrame();
+		ImGui::ShowDemoWindow(); // your drawing here
+		ImGui::Render();
+		ImGui_Implbgfx_RenderDrawLists(ImGui::GetDrawData());
+
 		// Handle window resize.
 		int oldWidth = width, oldHeight = height;
 		glfwGetWindowSize(window, &width, &height);
@@ -111,6 +151,11 @@ int main(int argc, char** argv)
 		// Advance to next frame. Process submitted rendering primitives.
 		bgfx::frame();
 	}
+
+	ImGui_ImplGlfw_Shutdown();
+	ImGui_Implbgfx_Shutdown();
+	ImGui::DestroyContext();
+
 	bgfx::shutdown();
 	glfwTerminate();
 	return 0;
