@@ -45,5 +45,4 @@ project "bgfx"
 		{
 			"%{wks.location}/ThirdParty/bgfx/src/amalgamated.mm"
 		}
-		links { "QuartzCore.framework", "Metal.framework", "Cocoa.framework", "IOKit.framework", "CoreVideo.framework", "CoreGraphics.framework" }
 	setBxCompat()
