@@ -35,7 +35,7 @@ project "HelloWorld"
 		links { "dl", "GL", "pthread", "X11" }
 	
 	filter "system:macosx"
-		links { "QuartzCore.framework", "Metal.framework", "Cocoa.framework", "IOKit.framework", "CoreVideo.framework" }
+		links { "QuartzCore.framework", "Metal.framework", "Cocoa.framework", "IOKit.framework", "CoreVideo.framework", "CoreGraphics.framework" }
 	setBxCompat()
 	
 	
