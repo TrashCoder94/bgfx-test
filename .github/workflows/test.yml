@@ -19,66 +19,32 @@ env:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-#  # Windows - Test
-#  Windows:
-#    # The type of runner that the job will run on
-#    runs-on: windows-latest
-#  
-#    # Steps represent a sequence of tasks that will be executed as part of the job
-#    steps:
-#      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-#      - name: Checkout Repository
-#        uses: actions/checkout@v2
-#  
-#      - name: Download Workflow Artifact
-#        uses: dawidd6/action-download-artifact@v2.14.0
-#        with:
-#          workflow: build.yml
-#          name: Windows-Binaries
-#          path: Binaries
-#  
-#      - name: Test
-#        working-directory: ${{env.GITHUB_WORKSPACE}}
-#        run: Scripts/BuildMachine/BuildMachine-Windows-Run.bat
-#          
-#  # Linux - Test
-#  Linux:
-#    # The type of runner that the job will run on
-#    runs-on: ubuntu-latest
-#
-#    # Steps represent a sequence of tasks that will be executed as part of the job
-#    steps:
-#      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-#      - name: Checkout Repository
-#        uses: actions/checkout@v2
-#        
-#      - name: Download Workflow Artifact
-#        uses: dawidd6/action-download-artifact@v2.14.0
-#        with:
-#          workflow: build.yml
-#          name: Linux-Binaries
-#          path: Binaries
-#          
-#      - name: Display structure of downloaded files
-#        run: ls -R
-#        
-#      - name: Setup Prerequisites
-#        working-directory: ${{env.GITHUB_WORKSPACE}}
-#        run: |
-#          export DISPLAY=:99
-#          sudo apt-get update
-#          sudo apt install xvfb
-#          
-#      - name: Test
-#        working-directory: ${{env.GITHUB_WORKSPACE}}
-#        run: |
-#          chmod +x Scripts/BuildMachine/BuildMachine-Linux-Run.sh
-#          xvfb-run -a Scripts/BuildMachine/BuildMachine-Linux-Run.sh
-#    
-  # Mac - Test
-  Mac:
+  # Windows - Test
+  Windows:
     # The type of runner that the job will run on
-    runs-on: macos-latest
+    runs-on: windows-latest
+  
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+  
+      - name: Download Workflow Artifact
+        uses: dawidd6/action-download-artifact@v2.14.0
+        with:
+          workflow: build.yml
+          name: Windows-Binaries
+          path: Binaries
+  
+      - name: Test
+        working-directory: ${{env.GITHUB_WORKSPACE}}
+        run: Scripts/BuildMachine/BuildMachine-Windows-Run.bat
+          
+  # Linux - Test
+  Linux:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
@@ -90,25 +56,59 @@ jobs:
         uses: dawidd6/action-download-artifact@v2.14.0
         with:
           workflow: build.yml
-          name: Mac-Binaries
+          name: Linux-Binaries
           path: Binaries
-
-      - name: Install Dependencies
-        run: |
-          brew install --cask xquartz
-          echo "/opt/X11/bin" >> $GITHUB_PATH  
-
-      - name: Test
+          
+      - name: Display structure of downloaded files
+        run: ls -R
+        
+      - name: Setup Prerequisites
         working-directory: ${{env.GITHUB_WORKSPACE}}
         run: |
           export DISPLAY=:99
-          chmod +x Scripts/BuildMachine/BuildMachine-Mac-Run.sh
-          Scripts/BuildMachine/BuildMachine-Mac-Run.sh
-
-      #- name: Test
-      #  uses: GabrielBB/xvfb-action@v1.6
-      #  with:
-      #     options: -screen 0 1600x1200x24
-      #     run: |
-      #        chmod +x Scripts/BuildMachine/BuildMachine-Mac-Run.sh
-      #        xvfb-run -a Scripts/BuildMachine/BuildMachine-Mac-Run.sh
+          sudo apt-get update
+          sudo apt install xvfb
+          
+      - name: Test
+        working-directory: ${{env.GITHUB_WORKSPACE}}
+        run: |
+          chmod +x Scripts/BuildMachine/BuildMachine-Linux-Run.sh
+          xvfb-run -a Scripts/BuildMachine/BuildMachine-Linux-Run.sh
+    
+#  # Mac - Test
+#  Mac:
+#    # The type of runner that the job will run on
+#    runs-on: macos-latest
+#
+#    # Steps represent a sequence of tasks that will be executed as part of the job
+#    steps:
+#      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+#      - name: Checkout Repository
+#        uses: actions/checkout@v2
+#        
+#      - name: Download Workflow Artifact
+#        uses: dawidd6/action-download-artifact@v2.14.0
+#        with:
+#          workflow: build.yml
+#          name: Mac-Binaries
+#          path: Binaries
+#
+#      - name: Install Dependencies
+#        run: |
+#          brew install --cask xquartz
+#          echo "/opt/X11/bin" >> $GITHUB_PATH  
+#
+#      # Just running the exectuable without an virtual screen setup
+#      - name: Test
+#        working-directory: ${{env.GITHUB_WORKSPACE}}
+#        run: |
+#          chmod +x Scripts/BuildMachine/BuildMachine-Mac-Run.sh
+#          Scripts/BuildMachine/BuildMachine-Mac-Run.sh
+#
+#      # Commented out for reference in the future... maybe? Using Xvfb setup to run the exectuable
+#      #- name: Test
+#      #  working-directory: ${{env.GITHUB_WORKSPACE}}
+#      #  run: |
+#      #    export DISPLAY=:99
+#      #    chmod +x Scripts/BuildMachine/BuildMachine-Mac-Run.sh
+#      #    Xvfb :99 -screen 0 1024x768x8 & Scripts/BuildMachine/BuildMachine-Mac-Run.sh
