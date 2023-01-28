@@ -1,7 +1,7 @@
 project "ImGui"
 	kind "StaticLib"
 	language "C++"
-	cppdialect "C++17"
+	cppdialect "C++14"
 	staticruntime "on"
 	
 	targetdir ("%{wks.location}/Binaries/" .. outputdir .. "/%{prj.name}")
@@ -31,16 +31,6 @@ project "ImGui"
 		"%{IncludeDir.glfw}",
 		"%{IncludeDir.imgui}"
 	}
-	
-	filter "system:windows"
-		systemversion "latest"
-
-	filter "system:linux"
-		pic "on"
-		systemversion "latest"
-
-	filter "system:macosx"
-		systemversion "latest"
 
 	filter "configurations:Debug"
 		runtime "Debug"
