@@ -145,7 +145,9 @@
     <None Include="..\..\bimg\premake5.lua" />
     <None Include="..\..\bx\premake5.lua" />
     <None Include="..\..\glfw\premake5.lua" />
+    <None Include="..\..\imgui\premake5.lua" />
     <None Include="..\..\premake5.lua" />
+    <None Include="..\imgui\premake5.lua" />
     <None Include="premake5.lua" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
