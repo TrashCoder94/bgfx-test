@@ -103,7 +103,7 @@ jobs:
         run: |
           export DISPLAY=:99
           chmod +x Scripts/BuildMachine/BuildMachine-Mac-Run.sh
-          Xvfb :99 -screen 0 1024x768x8 & Scripts/BuildMachine/BuildMachine-Mac-Run.sh
+          Scripts/BuildMachine/BuildMachine-Mac-Run.sh
 
       #- name: Test
       #  uses: GabrielBB/xvfb-action@v1.6
