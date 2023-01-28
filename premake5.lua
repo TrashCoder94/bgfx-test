@@ -107,7 +107,7 @@ group "Dependencies"
 	include "bimg"
 	include "bx"
 	include "glfw"
-	include "ImGui"
+	include "imgui"
 group ""
 
 group "Example"
