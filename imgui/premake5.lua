@@ -32,6 +32,9 @@ project "ImGui"
 		"%{IncludeDir.imgui}"
 	}
 
+	filter "system:linux"
+		pic "on"
+
 	filter "configurations:Debug"
 		runtime "Debug"
 		symbols "on"
