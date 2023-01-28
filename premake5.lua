@@ -88,7 +88,6 @@ IncludeDir["bxCompatMSVC"] = "%{wks.location}/ThirdParty/bx/include/compat/msvc"
 IncludeDir["bxCompatMingW"] = "%{wks.location}/ThirdParty/bx/include/compat/mingw"
 IncludeDir["bxCompatOSX"] = "%{wks.location}/ThirdParty/bx/include/compat/osx"
 IncludeDir["glfw"] = "%{wks.location}/ThirdParty/glfw/include"
-IncludeDir["imgui"] = "%{wks.location}/ThirdParty/imgui"
 
 function setBxCompat()
 	filter "action:vs*"
@@ -107,7 +106,6 @@ group "Dependencies"
 	include "bimg"
 	include "bx"
 	include "glfw"
-	include "ImGui"
 group ""
 
 group "Example"

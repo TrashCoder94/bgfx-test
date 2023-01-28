@@ -23,11 +23,10 @@ project "HelloWorld"
 		"Source",
 		"%{IncludeDir.bgfx}",
 		"%{IncludeDir.bx}",
-		"%{IncludeDir.glfw}",
-		"%{IncludeDir.imgui}"
+		"%{IncludeDir.glfw}"
 	}
 
-	links { "bgfx", "bimg", "bx", "glfw", "ImGui" }
+	links { "bgfx", "bimg", "bx", "glfw" }
 
 	filter "system:windows"
 		links { "gdi32", "kernel32", "psapi" }

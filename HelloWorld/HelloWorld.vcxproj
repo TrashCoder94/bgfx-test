@@ -138,7 +138,7 @@
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>FD_DEBUG;BX_CONFIG_DEBUG=1;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>Source;..\ThirdParty\bgfx\include;..\ThirdParty\bx\include;..\ThirdParty\glfw\include;..\ThirdParty\imgui;..\ThirdParty\bx\include\compat\msvc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>Source;..\ThirdParty\bgfx\include;..\ThirdParty\bx\include;..\ThirdParty\glfw\include;..\ThirdParty\bx\include\compat\msvc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <Optimization>Disabled</Optimization>
       <MinimalRebuild>false</MinimalRebuild>
@@ -159,7 +159,7 @@
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>FD_DEBUG;BX_CONFIG_DEBUG=1;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>Source;..\ThirdParty\bgfx\include;..\ThirdParty\bx\include;..\ThirdParty\glfw\include;..\ThirdParty\imgui;..\ThirdParty\bx\include\compat\msvc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>Source;..\ThirdParty\bgfx\include;..\ThirdParty\bx\include;..\ThirdParty\glfw\include;..\ThirdParty\bx\include\compat\msvc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <Optimization>Disabled</Optimization>
       <MinimalRebuild>false</MinimalRebuild>
@@ -180,7 +180,7 @@
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>FD_RELEASE;BX_CONFIG_DEBUG=0;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>Source;..\ThirdParty\bgfx\include;..\ThirdParty\bx\include;..\ThirdParty\glfw\include;..\ThirdParty\imgui;..\ThirdParty\bx\include\compat\msvc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>Source;..\ThirdParty\bgfx\include;..\ThirdParty\bx\include;..\ThirdParty\glfw\include;..\ThirdParty\bx\include\compat\msvc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>Full</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
@@ -204,7 +204,7 @@
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>FD_RELEASE;BX_CONFIG_DEBUG=0;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>Source;..\ThirdParty\bgfx\include;..\ThirdParty\bx\include;..\ThirdParty\glfw\include;..\ThirdParty\imgui;..\ThirdParty\bx\include\compat\msvc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>Source;..\ThirdParty\bgfx\include;..\ThirdParty\bx\include;..\ThirdParty\glfw\include;..\ThirdParty\bx\include\compat\msvc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>Full</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
@@ -228,7 +228,7 @@
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>FD_DISTRIBUTION;BX_CONFIG_DEBUG=0;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>Source;..\ThirdParty\bgfx\include;..\ThirdParty\bx\include;..\ThirdParty\glfw\include;..\ThirdParty\imgui;..\ThirdParty\bx\include\compat\msvc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>Source;..\ThirdParty\bgfx\include;..\ThirdParty\bx\include;..\ThirdParty\glfw\include;..\ThirdParty\bx\include\compat\msvc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>Full</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
@@ -252,7 +252,7 @@
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>FD_DISTRIBUTION;BX_CONFIG_DEBUG=0;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>Source;..\ThirdParty\bgfx\include;..\ThirdParty\bx\include;..\ThirdParty\glfw\include;..\ThirdParty\imgui;..\ThirdParty\bx\include\compat\msvc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>Source;..\ThirdParty\bgfx\include;..\ThirdParty\bx\include;..\ThirdParty\glfw\include;..\ThirdParty\bx\include\compat\msvc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>Full</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
@@ -272,13 +272,9 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="Source\bgfx-imgui\fs_ocornut_imgui.bin.h" />
-    <ClInclude Include="Source\bgfx-imgui\imgui_impl_bgfx.h" />
-    <ClInclude Include="Source\bgfx-imgui\vs_ocornut_imgui.bin.h" />
     <ClInclude Include="Source\logo.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Source\bgfx-imgui\imgui_impl_bgfx.cpp" />
     <ClCompile Include="Source\main.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -293,9 +289,6 @@
     </ProjectReference>
     <ProjectReference Include="..\glfw\glfw.vcxproj">
       <Project>{9563977C-819A-980D-2A87-7E10169D140F}</Project>
-    </ProjectReference>
-    <ProjectReference Include="..\ImGui\ImGui.vcxproj">
-      <Project>{C0FF640D-2C14-8DBE-F595-301E616989EF}</Project>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
